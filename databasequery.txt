@@ -1,0 +1,64 @@
+-- create database
+
+create database productdb1;
+
+-- use database
+
+use productdb1;
+
+-- create table
+
+CREATE TABLE `product`
+
+(
+
+  `id`            INT(11) NOT NULL auto_increment ,
+
+  `name`          VARCHAR(255) NOT NULL ,
+
+  `type` 		  VARCHAR(100) NOT NULL,
+
+  `price`   	 DECIMAL(7,2) NOT NULL,
+
+  `vendor`      VARCHAR(100) NOT NULL,
+
+  PRIMARY KEY (`id`),
+
+  UNIQUE `idx_name_unique` (`name`(255))
+
+)
+
+engine = innodb charset=utf8mb4 COLLATE utf8mb4_general_ci;
+
+
+-- add records
+
+INSERT INTO product(id,name,type,price,vendor) 
+
+VALUES 
+
+(1,'Olay hand cream', 'hand cream', 19.99, 'Olay'),
+
+(2,'Olay face cream', 'face cream', 40.99, 'Olay'),
+
+(3,'Nutrogina face cream', 'face cream', 50.99, 'Nutrogina'),
+
+(4,'Bee lip balsam', 'lip balsam', 5.99, 'Bee'),
+
+(5,'Mary Kay face cream', 'face cream', 40.99, 'Mary Kay'),
+
+(6,'Olay body wash', 'body wash', 15.99, 'Olay'),
+
+(7,'Mary Kay body wash', 'body wash', 15.99, 'Mary Kay'),
+
+(8,'Nutrogina body wash', 'body wash', 15.99, 'Nutrogina'),
+
+(9, 'Bee body wash', 'body wash', 15.99, 'Bee'),
+
+(10,'Bee wax', 'wax', 30.99, 'Bee');
+
+
+-- show records 
+use productdb1;
+select * from  product;
+
